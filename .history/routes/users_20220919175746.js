@@ -21,9 +21,11 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   const user = req.body;
+// ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
 
-  // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
-  users.push({ ...user, id: uuidv4() });
+  const userWithId = { ...user, id: uuidv4() };
+
+  users.push(userWithId);
 
   res.send(`User with the same name ${user.firstName} added to the database!`);
 });
