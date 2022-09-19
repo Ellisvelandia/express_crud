@@ -21,7 +21,7 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
   const user = req.body;
 
-  users.push(user);
+  user.push(user);
 
   res.send(`User with the same ${user.firstName} added to the database!`);
 });

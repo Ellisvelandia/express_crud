@@ -5,25 +5,30 @@ const users = [
   {
     name: "ellis",
     lastname: "Caicedo",
-    age: 25,
+    age: 25
   },
   {
     firstName: "Jane",
     lastName: "Doe",
-    age: 24,
-  },
-];
+    age: 24
+  }
+]
 
-router.get("/", (req, res) => {
-  res.send(users);
+
+router.get("/", (req, res) => { 
+  console.log(users);
+
+res.send(users)
 });
 
-router.post("/", (req, res) => {
+router.post('/', (req, res) => {
   const user = req.body;
 
-  users.push(user);
+  console.log
 
-  res.send(`User with the same ${user.firstName} added to the database!`);
+  user.push(user)
+
+  res.send('POST ROUTE REACHED');
 });
 
 export default router;
