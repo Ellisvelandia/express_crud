@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const router = express.Router();
 let users = [];
-
+ 
 router.get("/", (req, res) => {
   res.send(users);
 });
@@ -32,23 +32,6 @@ router.delete("/:id", (req, res) => {
   res.send(`User with the id ${id} deleted from the database.`);
 });
 
-router.patch("/:id", (req, res) => {
-  const { id } = req.params;
-  const { firstName, lastName, age } = req.body;
-
-  const user = users.find((user) => user.id == id);
-
-  if (firstName) {
-    user.firstName = firstName;
-  }
-
-  if (lastName) {
-    user.lastName = lastName;
-  }
-
-  if (age) {
-    user.age = age;
-  }
-});
+router.patch()
 
 export default router;
