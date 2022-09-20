@@ -16,3 +16,10 @@ app.listen(PORT, () =>
   console.log(`Server Running on port: http://localhost:${PORT}`)
 );
 
+{
+  "Name": "Fergal Devitt",	
+  "Preferred" "Finn Balor",	
+  "Place Of Birth": "Republic of Ireland Dublin, Leinster, Republic Of Ireland",
+  "Nationality": "IRE",
+   "img": "http://www.profightdb.com/img/wrestlers/thumbs-600/8c398cda3cfinnbalor.jpg", 
+  }

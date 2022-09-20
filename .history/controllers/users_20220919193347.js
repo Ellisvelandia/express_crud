@@ -32,14 +32,13 @@ export const deleteUser = (req, res) => {
 
 export const updateUser = (req, res) => {
   const { id } = req.params;
-  const { Name, PlaceOfBirth, Nationality, img } = req.body;
+  const { Name, lastName, age } = req.body;
 
   const user = users.find((user) => user.id == id);
 
   if (Name) user.Name = Name;
-  if (PlaceOfBirth) user.PlaceOfBirth = PlaceOfBirth;
-  if (Nationality) user.Nationality = Nationality;
-  if (img) user.img = img;
+  if (lastName) user.lastName = lastName;
+  if (age) user.age = age;
 
   res.send(`User with the id ${id} has been updated`);
 };
