@@ -39,4 +39,6 @@ export const updateUser = (req, res) => {
   if (age) user.age = age;
 
   res.send(`User with the id ${id} has been updated`);
-};
+});
+
+
