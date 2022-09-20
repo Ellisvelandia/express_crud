@@ -1,17 +1,22 @@
 import express from "express";
 
-import { createUser ,getUsers, getUser , deleteUser } from "../controllers/users.js";
+import { createUser ,getUser } from "../controllers/users.js";
 
 const router = express.Router();
 let users = [];
 
-router.get("/", getUsers);
+router.get("/", getUser);
 
 router.post("/", createUser);
 
-router.get("/:id", getUser);
+router.get("/:id", )
+router.delete("/:id", (req, res) => {
+  const { id } = req.params;
 
-router.delete("/:id", deleteUser);
+  users = users.filter((user) => user.id == id);
+
+  res.send(`User with the id ${id} deleted from the database.`);
+});
 
 router.patch("/:id", (req, res) => {
   const { id } = req.params;

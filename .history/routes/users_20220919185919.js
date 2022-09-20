@@ -1,17 +1,30 @@
 import express from "express";
+import { v4 as uuidv4 } from "uuid";
 
-import { createUser ,getUsers, getUser , deleteUser } from "../controllers/users.js";
+import { createUser ,getUser } from "../controllers/users";
 
 const router = express.Router();
 let users = [];
 
-router.get("/", getUsers);
+router.get("/", getUser);
 
 router.post("/", createUser);
 
-router.get("/:id", getUser);
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
 
-router.delete("/:id", deleteUser);
+  const foundUser = users.find((user) => user.id == id);
+
+  res.send(foundUser);
+});
+
+router.delete("/:id", (req, res) => {
+  const { id } = req.params;
+
+  users = users.filter((user) => user.id == id);
+
+  res.send(`User with the id ${id} deleted from the database.`);
+});
 
 router.patch("/:id", (req, res) => {
   const { id } = req.params;

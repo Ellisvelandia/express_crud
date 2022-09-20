@@ -11,6 +11,7 @@ router.post("/", createUser);
 
 router.get("/:id", getUser);
 
+
 router.delete("/:id", deleteUser);
 
 router.patch("/:id", (req, res) => {
